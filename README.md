@@ -1,5 +1,5 @@
 ## Just my personal Config
-If you're interested, this config is an all rounder based on the neovim master branch, setup using the lazy.nvim package manager. The structure follows the lazy.nvim style by having plugins with than a few lines of configuration in their own file under lua/plugins.
+If you're interested, this config is an all rounder based on the neovim master branch, setup using the lazy.nvim package manager. The structure follows the lazy.nvim style by having plugins with more than a few lines of configuration in their own file under lua/plugins.
 
 ### Philosophy of Use
 Capable, No Frills, Mid-weight
