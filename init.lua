@@ -1,23 +1,23 @@
+require("config.lazy")
 require("remap24")
 require("set24")
 
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-local opts = require("lazyvimopts")
-
-require("lazy").setup("plugins", opts)
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- if not vim.loop.fs_stat(lazypath) then
+--   vim.fn.system({
+--     "git",
+--     "clone",
+--     "--filter=blob:none",
+--     "https://github.com/folke/lazy.nvim.git",
+--     "--branch=stable", -- latest stable release
+--     lazypath,
+--   })
+-- end
+-- vim.opt.rtp:prepend(lazypath)
+--
+-- local opts = require("lazyvimopts")
+--
+-- require("lazy").setup("plugins", opts)
 
 -- setup must be called before loading the colorscheme
 -- Default options:
@@ -46,4 +46,13 @@ require("gruvbox").setup({
     dim_inactive = false,
     transparent_mode = false,
 })
+
 vim.cmd("colorscheme gruvbox")
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = false,
+})
